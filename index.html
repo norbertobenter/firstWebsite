@@ -10,12 +10,17 @@
 
     <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyamJ0enRqY2drZnprcjRqb3Z2anM3ajRnNm1tYmtvdDV5NmR3cWU2ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/TVNmNzfL8ibYUyeQo8/200w.gif" height="400">
 
-    <audio id="bg-music" src="/audio.mp3"></audio>
+    <audio autoplay muted loop id="music">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
     <script>
-        setTimeout(function() {
-            document.getElementById("bg-music").play();
-        }, 1000);
+    // Unmute after page loads
+    window.onload = function() {
+        const audio = document.getElementById("music");
+        audio.muted = false;
+        audio.play();
+    };
     </script>
 </body>
 </html>
