@@ -13,11 +13,16 @@
     <audio id="bg-music">
         <source src="https://drive.google.com/uc?export=download&id=11WA_or_H1QUwgHkZyjA2tov62PvzYEj_" type="audio/mpeg">
     </audio>
-    
+
     <script>
-        setTimeout(function() {
-            document.getElementById("bg-music").play();
-        }, 1000);
+        window.addEventListener("load", () => {
+        setTimeout(() => {
+        const audio = document.getElementById("bg-music");
+        audio.play().catch(err => {
+            console.log("Autoplay blocked by browser:", err);
+            });
+            }, 1000);
+        });
     </script>
 </body>
 </html>
